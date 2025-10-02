@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-01_14-57-42",
+            "content": "@@ -1,1963 +0,0 @@\n-class Towel:%0A    def __init__(self, color: str, size: str):%0A        self.color: str = color%0A        self.size: str = size%0A        self.wetness: int = 0%0A%0A    def getMaxWetness(self) -%3E int:%0A        if self.size == %22P%22:%0A            return 10%0A        if self.size == %22M%22:%0A            return 20%0A        if self.size == %22G%22:%0A            return 30%0A        return 0%0A%0A    def dry(self, amount: int) -%3E None:%0A        self.wetness += amount%0A        if self.wetness %3E self.getMaxWetness():%0A            print(%22Toalha encharcada%22)%0A            self.wetness = self.getMaxWetness()%0A%0A    def wringOut(self):%0A        self.wetness = 0%0A%0A    def isDry(self) -%3E bool:%0A        return self.wetness == 0%0A%0A    def __str__(self) -%3E str:%0A        return f%22Cor: %7Bself.color%7D, Tamanho: %7Bself.size%7D, Umidade: %7Bself.wetness%7D%22%0A%0Adef main():%0A    toalha = None%0A    while True:%0A        line: str = input(%22$%22)%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A%0A        if not args%5B0%5D:%0A            continue%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22criar%22:  # color size%0A            if len(args) %3C 3:%0A                print(%22fail: falta parametros%22)%0A                continue%0A            color = args%5B1%5D%0A            size = args%5B2%5D%0A            toalha = Towel(color, size)%0A            %0A        elif args%5B0%5D == %22mostrar%22:%0A            if toalha is not None:%0A                print(toalha)%0A            else:%0A                print(%22fail: Nenhuma toalha criada%22)%0A        elif args%5B0%5D == %22dry%22:  # amount%0A            if toalha is not None:%0A                if len(args) %3C 2:%0A                    print(%22fail: falta o valor%22)%0A                    continue%0A                try:%0A                    amount = int(args%5B1%5D)%0A                    toalha.dry(amount)%0A                except ValueError:%0A                    print(%22fail: o valor deve ser um numero%22)%0A            else:%0A                print(%22fail: Nenhuma toalha criada%22)%0A        else:%0A            print(%22fail: comando desconhecido%22)%0A%0Amain()\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-10-01_14-58-30",
+            "content": "@@ -837,35 +837,8 @@\n ue:%0A\n-        print(%22$%22, end=%22%22)%0A\n     \n@@ -859,16 +859,19 @@\n = input(\n+%22$%22\n )%0A      \n@@ -900,17 +900,16 @@\n ne.split\n- \n (%22 %22)%0A%0A \n@@ -1245,16 +1245,29 @@\n , size)%0A\n+            %0A\n         \n@@ -1331,67 +1331,8 @@\n one:\n-  # Verifica se a toalha foi criada antes de tentar mostrar\n %0A   \n@@ -1497,32 +1497,169 @@\n ha is not None:%0A\n+                if len(args) %3C 2:%0A                    print(%22fail: falta o valor%22)%0A                    continue%0A                try:%0A    \n                 \n@@ -1692,24 +1692,28 @@\n             \n+    \n toalha.dry(a\n@@ -1719,16 +1719,113 @@\n amount)%0A\n+                except ValueError:%0A                    print(%22fail: o valor deve ser um numero%22)%0A\n         \n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-10-01_15-07-39",
+            "content": "@@ -857,17 +857,16 @@\n %22, end=%22\n- \n %22)%0A     \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-10-01_15-10-41",
+            "content": "@@ -840,18 +840,16 @@\n %0A       \n- #\n  print(%22\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-10-01_15-19-39",
+            "content": "@@ -158,70 +158,35 @@\n def \n-dry(self, amount: int) -%3E None:%0A        self.wetness += amou\n+getMaxWetness(self) -%3E i\n nt\n+:\n %0A   \n@@ -202,90 +202,51 @@\n elf.\n-wetness %3E self.getMaxWetness():%0A            print(%22Toalha encharcada%22)%0A   \n+size == %22P%22:%0A            return 10%0A\n         \n  sel\n@@ -245,81 +245,50 @@\n     \n+if\n  self.\n-wetness = self.getMaxWetness()%0A%0A    def getMaxWetness(self) -%3E int:\n+size == %22M%22:%0A            return 20\n %0A   \n@@ -301,33 +301,33 @@\n f self.size == %22\n-P\n+G\n %22:%0A            r\n@@ -324,33 +324,33 @@\n          return \n-1\n+3\n 0%0A        if sel\n@@ -347,118 +347,223 @@\n     \n-if self.size == %22M%22:%0A            return 20%0A        if self.size == %22G%22:%0A            return 30%0A        return 0\n+return 0%0A%0A    def dry(self, amount: int) -%3E None:%0A        self.wetness += amount%0A        if self.wetness %3E self.getMaxWetness():%0A            print(%22Toalha encharcada%22)%0A            self.wetness = self.getMaxWetness()\n %0A%0A  \n@@ -938,33 +938,8 @@\n  %22)%0A\n-        print(%22$%22 + line)\n %0A   \n@@ -1056,24 +1056,38 @@\n  == %22criar%22:\n+  # color size\n %0A           \n@@ -1343,16 +1343,74 @@\n t None: \n+ # Verifica se a toalha foi criada antes de tentar mostrar\n %0A       \n@@ -1533,16 +1533,26 @@\n = %22dry%22:\n+  # amount\n %0A       \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-10-02_13-21-57",
+            "content": "@@ -997,32 +997,33 @@\n        continue%0A\n+%0A\n         if args%5B\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-10-02_13-35-04",
+            "content": "@@ -1482,273 +1482,8 @@\n %5D ==\n- %22seca%22:%0A            if toalha is not None:%0A                if toalha.isDry():%0A                    print(%22sim%22)%0A                else:%0A                    print(%22nao%22)%0A            else:%0A                print(%22fail: Nenhuma toalha criada%22)%0A            elif args%5B0%5D ==\n  %22dr\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-10-02_13-40-35",
+            "content": "@@ -1755,36 +1755,32 @@\n y%22:%0A            \n-    \n if toalha is not\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-10-02_13-41-23",
+            "content": "@@ -1716,32 +1716,36 @@\n riada%22)%0A        \n+    \n elif args%5B0%5D == \n@@ -1751,16 +1751,20 @@\n  %22dry%22:%0A\n+    \n         \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-10-02_13-42-12",
+            "content": "@@ -1745,15 +1745,11 @@\n == %22\n-enxugar\n+dry\n %22:%0A \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-10-02_13-55-40",
+            "content": "@@ -242,17 +242,16 @@\n etness %3E\n-=\n  self.ge\n@@ -1934,32 +1934,8 @@\n a%22)%0A\n-        elif args%5B0%5D ==%0A\n     \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-10-02_13-59-57",
+            "content": "@@ -1923,32 +1923,56 @@\n toalha criada%22)%0A\n+        elif args%5B0%5D ==%0A\n         else:%0A  \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-10-02_14-00-31",
+            "content": "@@ -285,17 +285,17 @@\n  print(%22\n-t\n+T\n oalha en\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-10-02_14-00-56",
+            "content": "@@ -1935,275 +1935,8 @@\n a%22)%0A\n-        elif args%5B0%5D: == %22torcer%22:%0A            if toalha is not None:%0A                if toalha.wringOut():%0A                    print(%22sim%22)%0A                else %0A                    print(%22nao%22)%0A            else:%0A                print(%22fail: Nenhuma toalha criada%22)%0A\n     \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-10-02_14-07-33",
+            "content": "@@ -1947,24 +1947,25 @@\n elif args%5B0%5D\n+:\n  == %22torcer%22\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-10-02_14-08-06",
+            "content": "@@ -2083,33 +2083,33 @@\n             else\n-:\n+ \n %0A               \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-10-02_14-08-30",
+            "content": "@@ -2012,24 +2012,27 @@\n             \n+if \n toalha.wring\n@@ -2032,24 +2032,113 @@\n a.wringOut()\n+:%0A                    print(%22sim%22)%0A                else:%0A                    print(%22nao%22)\n %0A           \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-10-02_14-12-50",
+            "content": "class Towel:\n    def __init__(self, color: str, size: str):\n        self.color: str = color\n        self.size: str = size\n        self.wetness: int = 0\n\n    def dry(self, amount: int) -> None:\n        self.wetness += amount\n        if self.wetness >= self.getMaxWetness():\n            print(\"toalha encharcada\")\n            self.wetness = self.getMaxWetness()\n\n    def getMaxWetness(self) -> int:\n        if self.size == \"P\":\n            return 10\n        if self.size == \"M\":\n            return 20\n        if self.size == \"G\":\n            return 30\n        return 0\n\n    def wringOut(self):\n        self.wetness = 0\n\n    def isDry(self) -> bool:\n        return self.wetness == 0\n\n    def __str__(self) -> str:\n        return f\"Cor: {self.color}, Tamanho: {self.size}, Umidade: {self.wetness}\"\n\ndef main():\n    toalha = None\n    while True:\n        # print(\"$\", end=\" \")\n        line: str = input()\n        args: list[str] = line.split (\" \")\n        print(\"$\" + line)\n        if not args[0]:\n            continue\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"criar\":\n            if len(args) < 3:\n                print(\"fail: falta parametros\")\n                continue\n            color = args[1]\n            size = args[2]\n            toalha = Towel(color, size)\n        elif args[0] == \"mostrar\":\n            if toalha is not None: \n                print(toalha)\n            else:\n                print(\"fail: Nenhuma toalha criada\")\n        elif args[0] == \"seca\":\n            if toalha is not None:\n                if toalha.isDry():\n                    print(\"sim\")\n                else:\n                    print(\"nao\")\n            else:\n                print(\"fail: Nenhuma toalha criada\")\n        elif args[0] == \"enxugar\":\n            if toalha is not None:\n                amount = int(args[1])\n                toalha.dry(amount)\n            else:\n                print(\"fail: Nenhuma toalha criada\")\n        elif args[0] == \"torcer\":\n            if toalha is not None:\n                toalha.wringOut()\n            else:\n                print(\"fail: Nenhuma toalha criada\")\n        else:\n            print(\"fail: comando desconhecido\")\n\nmain()",
+            "lines": "76"
+        }
+    ]
+}

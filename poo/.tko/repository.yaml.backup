@@ -1,16 +1,19 @@
 remote: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
-lang: py
-filter:
-- BLOCO_A
-- BLOCO_
 version: 0.0.1
 database: database
-expanded: []
-tasks: {}
+expanded:
+- configuracao-e-aquecimento
+- campanha-principal
+- bloco_b-primeiras-classes
+tasks:
+  animal: '{rate:25}'
+  enxugar: '{rate:100, alone:7, study:120}'
 flags:
   quests: 0
   tracks: 0
   tasks: 0
   graph: 1
   xray: 0
-index: toalha
+lang: py
+index: enxugar
+filter: []

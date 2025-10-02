@@ -1,0 +1,40 @@
+2025-10-02 13:18:47, MOVE, v:1, k:animal, mode:PICK
+2025-10-02 13:18:48, EXEC, v:1, k:animal, mode:FULL, rate:0
+2025-10-02 13:19:59, EXEC, v:1, k:animal, mode:FULL, rate:25, size:72
+2025-10-02 13:21:52, MOVE, v:1, k:animal, mode:BACK
+2025-10-02 13:21:55, MOVE, v:1, k:enxugar, mode:PICK
+2025-10-02 13:21:57, EXEC, v:1, k:enxugar, mode:FULL, rate:20, size:64
+2025-10-02 13:34:59, MOVE, v:1, k:enxugar, mode:BACK
+2025-10-02 13:35:02, MOVE, v:1, k:enxugar, mode:PICK
+2025-10-02 13:35:04, EXEC, v:1, k:enxugar, mode:FULL, rate:20, size:63
+2025-10-02 13:40:35, EXEC, v:1, k:enxugar, mode:FULL, rate:0, size:71
+2025-10-02 13:41:23, EXEC, v:1, k:enxugar, mode:FULL, rate:0, size:71
+2025-10-02 13:42:12, EXEC, v:1, k:enxugar, mode:FULL, rate:30, size:71
+2025-10-02 13:55:40, EXEC, v:1, k:enxugar, mode:FULL, rate:50, size:71
+2025-10-02 13:59:57, EXEC, v:1, k:enxugar, mode:FULL, rate:0, size:72
+2025-10-02 13:59:59, EXEC, v:1, k:enxugar, mode:FULL, rate:0
+2025-10-02 14:00:31, EXEC, v:1, k:enxugar, mode:FULL, rate:50, size:71
+2025-10-02 14:00:56, EXEC, v:1, k:enxugar, mode:FULL, rate:90, size:71
+2025-10-02 14:07:33, EXEC, v:1, k:enxugar, mode:FULL, rate:0, size:79
+2025-10-02 14:07:36, EXEC, v:1, k:enxugar, mode:FULL, rate:0
+2025-10-02 14:08:06, EXEC, v:1, k:enxugar, mode:FULL, rate:0, size:79
+2025-10-02 14:08:08, EXEC, v:1, k:enxugar, mode:FULL, rate:0
+2025-10-02 14:08:30, EXEC, v:1, k:enxugar, mode:FULL, rate:90, size:79
+2025-10-02 14:12:50, EXEC, v:1, k:enxugar, mode:FULL, rate:100, size:76
+2025-10-02 14:15:20, MOVE, v:1, k:enxugar, mode:BACK
+2025-10-02 14:16:21, MOVE, v:1, k:enxugar, mode:PICK
+2025-10-02 14:16:23, EXEC, v:1, k:enxugar, mode:FULL, rate:100
+2025-10-02 14:16:24, EXEC, v:1, k:enxugar, mode:FULL, rate:100
+2025-10-02 14:16:25, MOVE, v:1, k:enxugar, mode:BACK
+2025-10-02 14:18:39, MOVE, v:1, k:toalha, mode:PICK
+2025-10-02 14:18:40, EXEC, v:1, k:toalha, mode:LOCK, rate:0
+2025-10-02 14:18:42, EXEC, v:1, k:toalha, mode:LOCK, rate:0
+2025-10-02 14:18:43, MOVE, v:1, k:toalha, mode:BACK
+2025-10-02 14:19:45, MOVE, v:1, k:enxugar, mode:PICK
+2025-10-02 14:19:47, EXEC, v:1, k:enxugar, mode:FULL, rate:100
+2025-10-02 14:19:49, MOVE, v:1, k:enxugar, mode:BACK
+2025-10-02 14:22:36, MOVE, v:1, k:enxugar, mode:PICK
+2025-10-02 14:22:38, EXEC, v:1, k:enxugar, mode:FULL, rate:100
+2025-10-02 14:22:40, EXEC, v:1, k:enxugar, mode:FULL, rate:100
+2025-10-02 14:22:40, MOVE, v:1, k:enxugar, mode:BACK
+2025-10-02 14:26:27, SELF, v:1, k:enxugar, rate:100, alone:7, study:120

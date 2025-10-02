@@ -2,15 +2,18 @@ remote: https://github.com/qxcodepoo/arcade/blob/master/Readme.md
 version: 0.0.1
 database: database
 expanded:
+- configuracao-e-aquecimento
 - campanha-principal
-- primeiras-classes
-tasks: {}
+- bloco_b-primeiras-classes
+tasks:
+  animal: '{rate:25}'
+  enxugar: '{rate:100, alone:7, study:120}'
 flags:
   quests: 0
   tracks: 0
   tasks: 0
-  graph: 0
+  graph: 1
   xray: 0
 lang: py
-index: toalha
+index: enxugar
 filter: []
