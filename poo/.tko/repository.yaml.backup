@@ -6,7 +6,7 @@ expanded:
 - campanha-principal
 - bloco_b-primeiras-classes
 tasks:
-  animal: '{rate:25}'
+  animal: '{rate:100, iagen:s, alone:9, study:120}'
   enxugar: '{rate:100, alone:7, study:120}'
 flags:
   quests: 0
@@ -15,5 +15,5 @@ flags:
   graph: 1
   xray: 0
 lang: py
-index: enxugar
+index: animal
 filter: []

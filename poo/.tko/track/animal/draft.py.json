@@ -52,8 +52,63 @@
         },
         {
             "label": "2025-10-02_13-19-59",
-            "content": "# class Animal:\n#     def __init__(self, species: str, sound: str):\n#         self.species: str = species\n#         self.sound: str = sound\n#         self.age = 0\n\n#     def __str__(self) -> str:\n#         return f\"{self.species}:{self.age}:{self.sound}\"\n\n# def main():\n#     animal = None\n#     while True:\n#         line: str = input()\n#         args: list[str] = line.split(\" \")\n\n#         if not args[0]:\n#             continue\n\n#         if args[0] == \"end\":\n#             break\n#         elif args[0] == \"init\":\n#             if len(args) < 3:\n#                 print(\"fail: falta parametros\")\n#                 continue\n#             species = args[1]\n#             sound = args[2]\n#             animal = Animal(species, sound)\n#         elif args[0] == \"show\":\n#             if animal is not None:\n#                 print(animal)\n#             else:\n#                 print(\"fail: Nenhum animal criado\")\n#         else:\n#             print(\"fail: comando desconhecido\")\n\n# main()\n\nclass Animal:\n    def __init__(self, species: str, sound: str):\n        self.species: str = species\n        self.sound: str = sound\n        self.age = 0\n\n    def __str__(self) -> str:\n        return f\"{self.species}:{self.age}:{self.sound}\"\n        \ndef main():\n    animal = None \n    while True:\n        line: str = input()\n        args: list[str] = line.split(\" \")\n        print(\"$\" + line)\n        if not args[0]:\n            continue\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            if len(args) < 3:\n                print(\"fail: falta parametros\")\n                continue\n            species = args[1]\n            sound = args[2]\n            animal = Animal(species, sound)\n        elif args[0] == \"show\":\n            if animal is not None:\n                print(animal)\n            else:\n                print(\"fail: Nenhum animal criado\")\n        else:\n            print(\"fail: comando desconhecido\")\n\nmain()",
+            "content": "@@ -1,8 +1,10 @@\n+# \n class An\n@@ -9,16 +9,18 @@\n Animal:%0A\n+# \n     def \n@@ -61,16 +61,18 @@\n : str):%0A\n+# \n         \n@@ -99,24 +99,25 @@\n species%0A\n+#\n         \n self.sou\n@@ -104,24 +104,25 @@\n es%0A#        \n+ \n self.sound: \n@@ -133,24 +133,25 @@\n = sound%0A\n+#\n         \n self.age\n@@ -134,32 +134,33 @@\n  sound%0A#        \n+ \n self.age = 0%0A%0A  \n@@ -161,80 +161,398 @@\n  0%0A%0A\n+#\n     \n+ \n def \n-ageBy (self, increment: int) -%3E None: %0A        if self.age %3C 4\n+__str__(self) -%3E str:%0A#         return f%22%7Bself.species%7D:%7Bself.age%7D:%7Bself.sound%7D%22%0A%0A# def main():%0A#     animal = None%0A#     while True:%0A#         line: str = input()%0A#         args: list%5Bstr%5D = line.split(%22 %22)%0A%0A#         if not args%5B0%5D:%0A#             continue%0A%0A#         if args%5B0%5D == %22end%22:%0A#             break%0A#         elif args%5B0%5D == %22init%22:%0A#             if len(args) %3C 3\n :%0A\n+#   \n     \n@@ -563,38 +563,293 @@\n     \n-self.age += increment%0A\n+  print(%22fail: falta parametros%22)%0A#                 continue%0A#             species = args%5B1%5D%0A#             sound = args%5B2%5D%0A#             animal = Animal(species, sound)%0A#         elif args%5B0%5D == %22show%22:%0A#             if animal is not None:%0A#                 print(animal)%0A#    \n         \n else\n@@ -848,67 +848,298 @@\n     \n+ \n else:\n- %0A            print(f%22warning: %7B\n+%0A#                 print(%22fail: Nenhum animal criado%22)%0A#         else:%0A#             print(%22fail: comando desconhecido%22)%0A%0A# main()%0A%0Aclass Animal:%0A    def __init__(\n self\n-.\n+, \n species\n-%7D morreu%22)\n+: str, sound: str):%0A        self.species: str = species%0A        self.sound: str = sound%0A        self.age = 0\n %0A%0A  \n",
             "lines": "72"
+        },
+        {
+            "label": "2025-10-02_14-43-32",
+            "content": "@@ -151,21 +151,8 @@\n  0%0A%0A\n-    def%0A    %0A\n     \n@@ -1061,175 +1061,8 @@\n o%22)%0A\n-        elif args%5B0%5D == %22grow%22%0A            if animal is not None:%0A                animal.ageBy()%0A            else:%0A                print(%22fail: Nenhum animal criado%22)%0A\n     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-10-02_14-46-15",
+            "content": "@@ -147,16 +147,29 @@\n ge = 0%0A%0A\n+    def%0A    %0A\n     def \n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-10-02_14-46-42",
+            "content": "@@ -1087,17 +1087,16 @@\n = %22grow%22\n-:\n %0A       \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-10-02_14-47-06",
+            "content": "@@ -1132,41 +1132,8 @@\n     \n-        increment = int(args%5B1%5D)%0A\n     \n@@ -1153,25 +1153,16 @@\n l.ageBy(\n-increment\n )%0A      \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-10-02_14-50-17",
+            "content": "@@ -1136,20 +1136,16 @@\n         \n-    \n incremen\n@@ -1161,20 +1161,16 @@\n rgs%5B1%5D)%0A\n-    \n         \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-10-02_14-51-09",
+            "content": "@@ -214,18 +214,17 @@\n elf.age \n-==\n+%3C\n  4:%0A    \n@@ -235,148 +235,44 @@\n     \n-print(f%22warning: %7Bself.species%7D morreu%22)%0A            return%0A        self.age += increment%0A        if self.age %3E= 4:%0A            self.age = 4\n+self.age += increment%0A        else: \n %0A   \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-10-02_14-57-05",
+            "content": "@@ -431,188 +431,8 @@\n %22)%0A%0A\n-    def makeSound(self) -%3E None:%0A        if self.age == 0:%0A            return %22---%22%0A        if self.age == 4:%0A            return %22RIP%22%0A        else%0A            return self.sound %0A%0A\n     \n",
+            "lines": "50"
+        },
+        {
+            "label": "2025-10-02_15-01-58",
+            "content": "@@ -566,33 +566,32 @@\n IP%22%0A        else\n-:\n %0A            ret\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-02_15-02-28",
+            "content": "@@ -1565,181 +1565,8 @@\n o%22)%0A\n-        elif args%5B0%5D == %22noise%22:%0A            if animal is not None:%0A                animal.makeSound()%0A            else:%0A                print(%22fail: Nenhum animal criado%22)%0A\n     \n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-10-02_15-05-13",
+            "content": "@@ -1648,16 +1648,8 @@\n     \n- noise =\n  ani\n@@ -1668,37 +1668,8 @@\n d()%0A\n-                print(noise)%0A\n     \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-10-02_15-07-26",
+            "content": "class Animal:\n    def __init__(self, species: str, sound: str):\n        self.species: str = species\n        self.sound: str = sound\n        self.age = 0\n\n    def ageBy (self, increment: int) -> None: \n        if self.age == 4:\n            print(f\"warning: {self.species} morreu\")\n            return\n        self.age += increment\n        if self.age >= 4:\n            self.age = 4\n            print(f\"warning: {self.species} morreu\")\n\n    def makeSound(self) -> None:\n        if self.age == 0:\n            return \"---\"\n        if self.age == 4:\n            return \"RIP\"\n        else:\n            return self.sound \n\n    def __str__(self) -> str:\n        return f\"{self.species}:{self.age}:{self.sound}\"\n        \ndef main():\n    animal = None \n    while True:\n        line: str = input()\n        args: list[str] = line.split(\" \")\n        print(\"$\" + line)\n        if not args[0]:\n            continue\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            if len(args) < 3:\n                print(\"fail: falta parametros\")\n                continue\n            species = args[1]\n            sound = args[2]\n            animal = Animal(species, sound)\n        elif args[0] == \"show\":\n            if animal is not None:\n                print(animal)\n            else:\n                print(\"fail: Nenhum animal criado\")\n        elif args[0] == \"grow\":\n            if animal is not None:\n                increment = int(args[1])\n                animal.ageBy(increment)\n            else:\n                print(\"fail: Nenhum animal criado\")\n        elif args[0] == \"noise\":\n            if animal is not None:\n                noise = animal.makeSound()\n                print(noise)\n            else:\n                print(\"fail: Nenhum animal criado\")\n        else:\n            print(\"fail: comando desconhecido\")\n\nmain()",
+            "lines": "64"
         }
     ]
 }
