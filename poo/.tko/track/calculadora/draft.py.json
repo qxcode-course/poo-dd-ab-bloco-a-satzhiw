@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-02_17-46-13",
+            "content": "@@ -1,1437 +0,0 @@\n-class Calculadora:%0A    def __init__ (self, display: int, battery: int, batteryMax: int):%0A        self.display: int = display%0A        self.battery: int = battery%0A        self.batteryMax: int = display %0A%0A    def __str__(self) -%3E str:%0A        return f%22display = %7Bself.display:.2f%7D, battery = %7Bself.battery%7D%22%0A%0A%0Adef main():%0A    calculadora = Calculadora%0A    while True:%0A        line: str = input()%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A        print(%22$%22 + line)%0A        if not args%5B0%5D:%0A            continue%0A        if args%5B0%5D == %22end%22:%0A            break%0A        elif args%5B0%5D == %22init%22:%0A            if len(args) %3C 3:%0A                print(%22fail: falta parametros%22)%0A                continue%0A            display = args%5B1%5D%0A            battery = args%5B2%5D%0A            batteryMax = args%5B3%5D%0A            calculadora = Calculadora(display, battery, batteryMax)%0A        elif args%5B0%5D == %22show%22:%0A                print(calculadora)%0A        # elif args%5B0%5D == %22grow%22:%0A        #     if animal is not None:%0A        #         increment = int(args%5B1%5D)%0A        #         animal.ageBy(increment)%0A        #     else:%0A        #         print(%22fail: Nenhum animal criado%22)%0A        # elif args%5B0%5D == %22noise%22:%0A        #     if animal is not None:%0A        #         noise = animal.makeSound()%0A        #         print(noise)%0A        #     else:%0A        #         print(%22fail: Nenhum animal criado%22)%0A        else:%0A            print(%22fail: comando desconhecido%22)%0A%0Amain()\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-10-03_13-09-25",
+            "content": "@@ -35,16 +35,44 @@\n _ (self,\n+ display: int, battery: int,\n  battery\n@@ -108,12 +108,21 @@\n ay: \n-0.0 \n+int = display\n %0A   \n@@ -138,16 +138,21 @@\n .battery\n+: int\n  = batte\n@@ -153,19 +153,16 @@\n  battery\n-Max\n %0A       \n@@ -181,21 +181,24 @@\n yMax\n- = batteryMax\n+: int = display \n %0A%0A  \n@@ -330,20 +330,27 @@\n adora = \n-None\n+Calculadora\n %0A    whi\n@@ -578,16 +578,179 @@\n %22init%22:%0A\n+            if len(args) %3C 3:%0A                print(%22fail: falta parametros%22)%0A                continue%0A            display = args%5B1%5D%0A            battery = args%5B2%5D%0A\n         \n@@ -763,33 +763,33 @@\n tteryMax = args%5B\n-1\n+3\n %5D%0A            ca\n@@ -812,16 +812,34 @@\n uladora(\n+display, battery, \n batteryM\n@@ -878,49 +878,8 @@\n w%22:%0A\n-            if calculadora is not None: %0A\n     \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-10-03_13-17-02",
+            "content": "@@ -28,16 +28,17 @@\n __init__\n+ \n (self, b\n@@ -74,18 +74,17 @@\n .display\n- =\n+:\n  0.0 %0A  \n@@ -104,17 +104,26 @@\n ttery = \n-0\n+batteryMax\n %0A       \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-10-03_13-21-22",
+            "content": "@@ -252,163 +252,8 @@\n %7D%22%0A%0A\n-    def carregar(self, carga: int):%0A        self.battery += carga%0A        if self.battery %3E self.batteryMax:%0A            self.battery = batteryMax%0A        \n %0Adef\n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-10-03_13-25-20",
+            "content": "@@ -865,32 +865,34 @@\n uladora)%0A       \n+ #\n  elif args%5B0%5D ==\n@@ -897,14 +897,12 @@\n == %22\n-charge\n+grow\n %22:%0A \n@@ -904,32 +904,33 @@\n w%22:%0A        \n+#\n      if \n calculadora \n@@ -913,35 +913,30 @@\n    #     if \n-calculadora\n+animal\n  is not None\n@@ -936,32 +936,34 @@\n ot None:%0A       \n+ #\n          carga =\n@@ -955,21 +955,25 @@\n         \n-carga\n+increment\n  = int(a\n@@ -979,32 +979,34 @@\n args%5B1%5D)%0A       \n+ #\n          calcula\n@@ -1002,34 +1002,30 @@\n     \n-calculadora.carregar(carga\n+animal.ageBy(increment\n )%0A  \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-10-03_13-27-29",
+            "content": "@@ -384,21 +384,16 @@\n ttery = \n-self.\n batteryM\n@@ -700,28 +700,23 @@\n ryMax = \n-int(\n args%5B1%5D\n-)\n %0A       \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-10-03_13-30-02",
+            "content": "@@ -404,216 +404,8 @@\n Max%0A\n-%0A    def gastarBateria(self) -%3E bool:%0A        if self.battery %3E 0:%0A            self.battery -= 1%0A            return True %0A        else%0A            print(%22fail: bateria insuficient%22)%0A            return False%0A%0A\n     \n",
+            "lines": "46"
+        },
+        {
+            "label": "2025-10-03_13-36-11",
+            "content": "@@ -526,33 +526,32 @@\n ue %0A        else\n-:\n %0A            pri\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-10-03_13-36-23",
+            "content": "@@ -611,142 +611,8 @@\n alse\n-%0A    %0A    def soma(self, a: float,  b: float):%0A        if self.gastarBateria():%0A            self.display = a + gastarBateria%0A    %0A    \n %0A%0A  \n@@ -1253,35 +1253,29 @@\n     \n-elif args%5B0%5D == %22sum%22\n+#     else\n :%0A    \n+    #\n     \n@@ -1283,81 +1283,87 @@\n     \n-if calculadora is not None:%0A                a = float(args%5B1%5D)%0A  \n+print(%22fail: Nenhum animal criado%22)%0A        # elif args%5B0%5D == %22noise%22:%0A\n         \n     \n@@ -1362,40 +1362,44 @@\n     \n+#\n      \n- b = float(args%5B2%5D)\n+if animal is not None:\n %0A       \n     \n@@ -1386,32 +1386,34 @@\n ot None:%0A       \n+ #\n          calcula\n@@ -1409,29 +1409,33 @@\n     \n-calculadora.somar(a,b\n+noise = animal.makeSound(\n )%0A  \n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-10-03_13-42-13",
+            "content": "@@ -1549,16 +1549,17 @@\n ora.soma\n+r\n (a,b)%0A  \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-10-03_13-42-25",
+            "content": "@@ -718,17 +718,29 @@\n y = a + \n-b\n+gastarBateria\n %0A    %0A  \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-10-03_13-42-51",
+            "content": "@@ -580,17 +580,16 @@\n uficient\n-e\n %22)%0A     \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-10-03_13-43-08",
+            "content": "@@ -725,216 +725,27 @@\n + b%0A\n-%0A\n     \n-def divisao(self, numA: float, numB: float):%0A        if numB == 0:%0A            print(%22fail: divisao por zero%22)%0A            return%0A        if self.gastarBateria():%0A            self.display = numA / numB%0A%0A\n+%0A    %0A%0A        \n %0Adef\n@@ -1556,83 +1556,39 @@\n     \n-elif args%5B0%5D == %22div%22%0A             if calculadora is not None%0A     \n+#         print(noise)%0A\n         \n    n\n@@ -1587,32 +1587,19 @@\n     \n+#\n    \n-numA = float(args%5B1%5D)\n+  else:\n %0A   \n@@ -1603,24 +1603,25 @@\n         \n+#\n         \n numB = f\n@@ -1616,71 +1616,43 @@\n     \n-numB = float(args%5B2%5D)%0A                calculadora.div(numA,numB\n+ print(%22fail: Nenhum animal criado%22\n )%0A  \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-10-03_13-50-06",
+            "content": "@@ -1762,17 +1762,16 @@\n == %22div%22\n-:\n %0A       \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-10-03_13-50-50",
+            "content": "@@ -1795,33 +1795,32 @@\n dora is not None\n-:\n %0A               \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-10-03_13-51-01",
+            "content": "@@ -1912,20 +1912,16 @@\n dora.div\n-isao\n (numA,nu\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-10-03_13-51-40",
+            "content": "@@ -775,64 +775,8 @@\n t):%0A\n-        if not self.gastarBateria():%0A            return%0A\n     \n@@ -856,16 +856,53 @@\n  return%0A\n+        if self.gastarBateria():%0A    \n         \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-10-03_13-56-02",
+            "content": "class Calculadora:\n    def __init__(self, batteryMax: int):\n        self.display = 0.0 \n        self.battery = 0\n        self.batteryMax = batteryMax\n\n    def __str__(self) -> str:\n        return f\"display = {self.display:.2f}, battery = {self.battery}\"\n\n    def carregar(self, carga: int):\n        self.battery += carga\n        if self.battery > self.batteryMax:\n            self.battery = self.batteryMax\n\n    def gastarBateria(self) -> bool:\n        if self.battery > 0:\n            self.battery -= 1\n            return True \n        else:\n            print(\"fail: bateria insuficiente\")\n            return False\n    \n    def soma(self, a: float,  b: float):\n        if self.gastarBateria():\n            self.display = a + b\n\n    def divisao(self, numA: float, numB: float):\n        if not self.gastarBateria():\n            return\n        if numB == 0:\n            print(\"fail: divisao por zero\")\n            return\n        self.display = numA / numB\n\n\ndef main():\n    calculadora = None\n    while True:\n        line: str = input()\n        args: list[str] = line.split(\" \")\n        print(\"$\" + line)\n        if not args[0]:\n            continue\n        if args[0] == \"end\":\n            break\n        elif args[0] == \"init\":\n            batteryMax = int(args[1])\n            calculadora = Calculadora(batteryMax)\n        elif args[0] == \"show\":\n            if calculadora is not None: \n                print(calculadora)\n        elif args[0] == \"charge\":\n             if calculadora is not None:\n                carga = int(args[1])\n                calculadora.carregar(carga)\n        elif args[0] == \"sum\":\n             if calculadora is not None:\n                a = float(args[1])\n                b = float(args[2])\n                calculadora.soma(a,b)\n        elif args[0] == \"div\":\n             if calculadora is not None:\n                numA = float(args[1])\n                numB = float(args[2])\n                calculadora.divisao(numA,numB)\n        else:\n            print(\"fail: comando desconhecido\")\n\nmain()",
+            "lines": "69"
+        }
+    ]
+}

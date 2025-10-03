@@ -59,3 +59,8 @@
 2025-10-02 15:09:02, MOVE, v:1, k:animal, mode:PICK
 2025-10-02 15:09:04, EXEC, v:1, k:animal, mode:FULL, rate:100
 2025-10-02 15:09:05, MOVE, v:1, k:animal, mode:BACK
+2025-10-02 17:45:55, SELF, v:1, k:toalha, rate:70, guide:s, alone:10
+2025-10-02 17:46:09, MOVE, v:1, k:calculadora, mode:DOWN
+2025-10-02 17:46:11, MOVE, v:1, k:calculadora, mode:PICK
+2025-10-02 17:46:13, EXEC, v:1, k:calculadora, mode:FULL, rate:0, size:0
+2025-10-02 17:46:17, MOVE, v:1, k:calculadora, mode:BACK
